@@ -27,3 +27,5 @@ out/
 IO/
 IO1/
 .netbeans*
+nbproject/
+build/
