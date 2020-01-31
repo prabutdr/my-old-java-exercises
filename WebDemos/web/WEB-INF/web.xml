@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>FirstServlet</servlet-name>
+        <servlet-class>com.codestrokes.webdemos.FirstServlet</servlet-class>
+        <init-param>
+            <description>To specify target copyright footer link location.</description>
+            <param-name>included-resource</param-name>
+            <param-value>Copyright</param-value>
+        </init-param>
+        <init-param>
+            <description>JSP fragment which contains privacy details fot this site.</description>
+            <param-name>included-privacy</param-name>
+            <param-value>privacy.jspf</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Copyright</servlet-name>
+        <servlet-class>com.codestrokes.webdemos.Copyright</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IncludeServlet</servlet-name>
+        <servlet-class>com.codestrokes.webdemos.IncludeServlet</servlet-class>
+        <init-param>
+            <description>To specify target copyright footer link location.</description>
+            <param-name>included-resource</param-name>
+            <param-value>/Copyright</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FirstServlet</servlet-name>
+        <url-pattern>/FirstServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Copyright</servlet-name>
+        <url-pattern>/Copyright</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IncludeServlet</servlet-name>
+        <url-pattern>/IncludeServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
